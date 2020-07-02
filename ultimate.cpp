@@ -602,8 +602,14 @@ void operate::Sort(void)
     int n;
     cout << "Select one (1-6):";
     cin >> n;
+    int a[6];
     if (n == 1)
     {
+        cout<<"Ascending or Dscending?"<<endl;
+        cout<<"[1]Ascending [2]Dscending"<<endl;
+        cout<<" ";cin>>a[0];
+        if(a[0]==1)
+        {
         student *q = one->next;
         while (q->next != null)
         {
@@ -620,11 +626,40 @@ void operate::Sort(void)
             q = q->next;
         }
         cout<<endl;
-      
+        }
+        else if(a[0]==2)
+        {
+             student *q = one->next;
+        while (q->next != null)
+        {
+            student *p = q->next;
+            while (p != null)
+            {
+                if (q->ID <p->ID)
+                {
+                    
+                    q->swap(p);
+                }
+                p = p->next;
+            }
+            q = q->next;
+        }
+        cout<<endl;
+        }
+        else
+        {
+            cout<<"Input Wrong."<<endl;
+            system("pause");
+            return;
+        }
          
     }
     else if (n == 2)
     {
+        cout<<"Ascending or Dscending?"<<endl;
+        cout<<"[1]Ascending [2]Dscending"<<endl;
+        cout<<" ";cin>>a[1];
+        if(a[1]==1){
         student *q = one->next;
         while (q->next != null)
         {
@@ -639,9 +674,38 @@ void operate::Sort(void)
             }
             q = q->next;
         }
+        }
+        else if(a[1]==2)
+        {
+        student *q = one->next;
+        while (q->next != null)
+        {
+            student *p = q->next;
+            while (p != null)
+            {
+                if (q->Average < p->Average)
+                {
+                    q->swap(p);
+                }
+                p = p->next;
+            }
+            q = q->next;
+        }
+        }
+        else
+        {
+            cout<<"Input Wrong."<<endl;
+            system("pause");
+            return;
+        }
     }
     else if (n == 3)
     {
+        cout<<"Ascending or Dscending?"<<endl;
+        cout<<"[1]Ascending [2]Dscending"<<endl;
+        cout<<" ";cin>>a[2];
+        if(a[2]==1)
+        {
         student *q = one->next;
         while (q->next != null)
         {
@@ -656,9 +720,38 @@ void operate::Sort(void)
             }
             q = q->next;
         }
+        }
+        else if(a[2]==2)
+        {
+            student *q = one->next;
+        while (q->next != null)
+        {
+            student *p = q->next;
+            while (p != null)
+            {
+                if (q->Total < p->Total)
+                {
+                    q->swap(p);
+                }
+                p = p->next;
+            }
+            q = q->next;
+        }
+        }
+        else
+        {
+            cout<<"Input Wrong."<<endl;
+            system("pause");
+            return;
+        }
     }
     else if (n == 4)
     {
+        cout<<"Ascending or Dscending?"<<endl;
+        cout<<"[1]Ascending [2]Dscending"<<endl;
+        cout<<" ";cin>>a[3];
+        if(a[3]==1)
+        {
         student *q = one->next;
         while (q->next != null)
         {
@@ -673,9 +766,38 @@ void operate::Sort(void)
             }
             q = q->next;
         }
+        }
+        else if(a[3]==2)
+        {
+            student *q = one->next;
+        while (q->next != null)
+        {
+            student *p = q->next;
+            while (p != null)
+            {
+                if (q->Math < p->Math)
+                {
+                    q->swap(p);
+                }
+                p = p->next;
+            }
+            q = q->next;
+        }
+        }
+        else
+        {
+            cout<<"Input Wrong."<<endl;
+            system("pause");
+            return;
+        }
     }
     else if (n == 5)
-    {
+    { 
+        cout<<"Ascending or Dscending?"<<endl;
+        cout<<"[1]Ascending [2]Dscending"<<endl;
+        cout<<" ";cin>>a[4];
+        if(a[4]==1)
+        {
         student *q = one->next;
         while (q->next != null)
         {
@@ -690,9 +812,38 @@ void operate::Sort(void)
             }
             q = q->next;
         }
+        }
+        else if(a[4]==2)
+        {
+            student *q = one->next;
+        while (q->next != null)
+        {
+            student *p = q->next;
+            while (p != null)
+            {
+                if (q->Foreign < p->Foreign)
+                {
+                    q->swap(p);
+                }
+                p = p->next;
+            }
+            q = q->next;
+        }
+        }
+        else
+        {
+            cout<<"Input Wrong."<<endl;
+            system("pause");
+            return;
+        }
     }
     else if (n == 6)
     {
+        cout<<"Ascending or Dscending?"<<endl;
+        cout<<"[1]Ascending [2]Dscending"<<endl;
+        cout<<" ";cin>>a[5];
+        if(a[5]==1)
+        {
         student *q = one->next;
         while (q->next != null)
         {
@@ -707,6 +858,31 @@ void operate::Sort(void)
             }
             q = q->next;
         }
+        }
+        else if(a[5]==2)
+        {
+            student *q = one->next;
+        while (q->next != null)
+        {
+            student *p = q->next;
+            while (p != null)
+            {
+                if (q->IT < p->IT)
+                {
+                    q->swap(p);
+                }
+                p = p->next;
+            }
+            q = q->next;
+        }
+        }
+        else
+        {
+            cout<<"Input Wrong."<<endl;
+            system("pause");
+            return;
+        }
+
     }
     else
     {
@@ -722,6 +898,8 @@ void operate::Sort(void)
         cout << q->ID << "       " << q->Name << "     " << q->Class << "        " << q->Math << "           " << q->Foreign << "        " << q->IT << "         " << q->Total << "     " << q->Average << endl;
         q = q->next;
     }
+   
+
     ofstream Outfile("C:\\Users\\Ryy\\Student-Management-System\\Test.txt",ios::app);
     if(n==1){
         cout<<endl;
