@@ -146,7 +146,7 @@ void operate::desktop2(void)
             cout << "                  *      7--Delete student information                *\n";
             cout << "                  *      0--Exit the system                           *\n";
             cout << "                  *---------------------------------------------------*\n";
-            cout << "                  *------------------*Ultimate Pro+*-----------------*\n";
+            cout << "                  *------------------*Ultimate Pro+*------------------*\n";
             cout << "                  *-----------v5.1.1 Copyright By RoyRao--------------*\n";
             cout << "                  *----------All Rights Reserved @2020----------------*\n";
             cout << "                     Select(0-7):";
@@ -1026,7 +1026,7 @@ void operate::Del(void)
         cout << endl;
         cout << "No Student Record.Please Check." << endl;
         cout << endl;
-        return;
+       
     }
     if (!q)
     {
@@ -1034,9 +1034,7 @@ void operate::Del(void)
         one = one->next;
         cout << "Delete" << a[n] << "Successfully." << endl;
         ofstream open("C:\\Users\\Ryy\\Student-Management-System\\Test.txt",ios::app);
-        open<<"\nYou delele a student's data successuflly.The student id is"<<a[n]<<endl;
-        open<<"Now  student data is"<<endl;
-        operate::Save();
+        open<<"You delele a student's data successuflly.The student id is"<<a[n]<<endl;
         cout << endl;
         delete p;
     }
@@ -1046,14 +1044,15 @@ void operate::Del(void)
         q->next = p->next;
         cout << "Delete " << a[n] << " Successfully." << endl;
          ofstream open("C:\\Users\\Ryy\\Student-Management-System\\Test.txt",ios::app);
-        open<<"\nYou delele a student's data successuflly.The student id is"<<a[n]<<endl;
-        open<<"Now  student data is"<<endl;
-        operate::Save();
+        open<<"You delele a student's data successuflly.The student id is"<<a[n]<<endl;
         cout << endl;
         delete p;
     }
     count--;
-    }  
+    }
+       ofstream open("C:\\Users\\Ryy\\Student-Management-System\\Test.txt",ios::app);
+       open<<"Now the data is:\n";
+       operate::Save();
 }
 
 void operate::Save(void)
